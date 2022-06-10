@@ -19,4 +19,11 @@ public abstract class BankCard {
         return user;
     }
 
+    @Override
+    public String toString() {
+        return "BankCard{" +
+                "number='" + number + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }

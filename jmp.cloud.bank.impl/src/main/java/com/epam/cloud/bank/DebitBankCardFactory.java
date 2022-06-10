@@ -8,6 +8,7 @@ import java.util.UUID;
 import java.util.function.Function;
 
 public class DebitBankCardFactory implements Function<User, BankCard> {
+
     @Override
     public BankCard apply(User user) {
         return new DebitBankCard(UUID.randomUUID().toString(), user);
