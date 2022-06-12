@@ -29,4 +29,8 @@ public interface Service {
                 .orElse(0);
     }
 
+    static boolean isPayableUser(User user) {
+        return ChronoUnit.YEARS.between(user.getBirthday(), LocalDate.now()) > 18;
+    }
+
 }

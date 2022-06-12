@@ -35,6 +35,9 @@ public class Application {
         service.getAllUsers().forEach(System.out::println);
         System.out.println("********AVG************");
         System.out.println(service.getAverageUsersAge());
+        System.out.println("*************Payable Users***********");
+        service.getAllUsers()
+                .forEach(user -> System.out.println(user.getName() + " " + user.getSurname() + " is payable: " + Service.isPayableUser(user)));
 
     }
 
