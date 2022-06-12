@@ -33,6 +33,8 @@ public class Application {
 
         });
         service.getAllUsers().forEach(System.out::println);
+        System.out.println("********AVG************");
+        System.out.println(service.getAverageUsersAge());
 
     }
 
