@@ -8,6 +8,7 @@ import com.epam.dto.BankCardType;
 import com.epam.dto.Subscription;
 import com.epm.service.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -38,6 +39,9 @@ public class Application {
         System.out.println("*************Payable Users***********");
         service.getAllUsers()
                 .forEach(user -> System.out.println(user.getName() + " " + user.getSurname() + " is payable: " + Service.isPayableUser(user)));
+        System.out.println("**************Subs by condition*******************");
+        service.getAllSubscriptionsByCondition(subscription -> subscription.getStartDate().equals(LocalDate.now()))
+                .forEach(System.out::println);
 
     }
 
