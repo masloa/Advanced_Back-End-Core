@@ -4,14 +4,11 @@ import com.epam.dto.BankCard;
 import com.epam.dto.Subscription;
 import com.epam.dto.User;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalDouble;
-import java.util.stream.LongStream;
+import java.util.function.Predicate;
 
 public interface Service {
 
@@ -20,6 +17,8 @@ public interface Service {
     Optional<Subscription> getSubscriptionByBankCardNumber(String cardNumber);
 
     List<User> getAllUsers();
+
+    List<Subscription> getAllSubscriptionsByCondition(Predicate<Subscription> predicate);
 
     default double getAverageUsersAge() {
         LocalDate now = LocalDate.now();

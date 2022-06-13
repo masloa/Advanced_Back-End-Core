@@ -7,6 +7,7 @@ import com.epm.service.Service;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ServiceImpl implements Service {
@@ -30,5 +31,10 @@ public class ServiceImpl implements Service {
     @Override
     public List<User> getAllUsers() {
         return userCards.keySet().stream().collect(Collectors.toUnmodifiableList());
+    }
+
+    @Override
+    public List<Subscription> getAllSubscriptionsByCondition(Predicate<Subscription> predicate) {
+        return subscriptions.stream().filter(predicate).collect(Collectors.toUnmodifiableList());
     }
 }
