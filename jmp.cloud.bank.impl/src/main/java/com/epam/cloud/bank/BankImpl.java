@@ -13,12 +13,8 @@ public class BankImpl implements Bank {
 
     private final Map<BankCardType, Function<User, BankCard>> factories;
 
-    private BankImpl(Map<BankCardType, Function<User, BankCard>> factories) {
-        this.factories = factories;
-    }
-
-    public static Bank of() {
-        return new BankImpl(cardFactories());
+    public BankImpl() {
+        this.factories = cardFactories();
     }
 
     @Override
